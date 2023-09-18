@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-### [Algorithms](Algorithms)
+### [Algorithms](#algorithms)
 
 -   **Sorting**
     -   Bubble Sort
