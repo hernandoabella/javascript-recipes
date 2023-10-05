@@ -562,10 +562,125 @@ console.log(sortedArray); // [ 2, 24, 45, 66, 75, 90, 170, 802 ]
 
 **Searching:**
 
-**Binary Search:**
+**Binary Search:** Binary search is a widely used search algorithm that efficiently finds a specific target value within a sorted array.
 
-**Fast Linear Search:**
+```
+function binarySearch(arr, target) {
+  let left = 0;
+  let right = arr.length - 1;
 
-**Interpolation Search:**
+  while (left <= right) {
+    // Calculate the middle index of the current search interval
+    const mid = Math.floor((left + right) / 2);
 
-**Linear Search:**
+    // Check if the middle element is the target
+    if (arr[mid] === target) {
+      return mid; // Target found, return its index
+    } else if (arr[mid] < target) {
+      // If the target is greater, narrow the search to the right half
+      left = mid + 1;
+    } else {
+      // If the target is smaller, narrow the search to the left half
+      right = mid - 1;
+    }
+  }
+
+  return -1; // Target not found
+}
+
+// Example usage:
+const sortedArray = [2, 4, 7, 10, 23, 45, 56, 67, 78];
+const targetValue = 23;
+const result = binarySearch(sortedArray, targetValue);
+
+if (result !== -1) {
+  console.log(`Element found at index ${result}`);
+} else {
+  console.log("Element not found in the array");
+}
+// Element found at index 4
+```
+
+**Fast Linear Search:** A "Fast Linear Search" may refer to an optimized version of the linear search algorithm. Linear search, also known as sequential search, involves checking each element in a collection one by one until a match is found or the end of the collection is reached. It's not the most efficient search algorithm for large datasets but can be optimized in some cases.
+
+```
+function fastLinearSearch(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) {
+      return i; // Return the index of the target if found
+    }
+  }
+  return -1; // Return -1 if the target is not found
+}
+
+// Example usage:
+const arrayToSearch = [2, 4, 7, 10, 23, 45, 56, 67, 78];
+const targetValue = 23;
+const result = fastLinearSearch(arrayToSearch, targetValue);
+
+if (result !== -1) {
+  console.log(`Element found at index ${result}`); // Element found at index 4
+} else {
+  console.log("Element not found in the array");
+}
+```
+
+**Interpolation Search:** Interpolation Search is an advanced searching algorithm that is used to search for a specific target value within a sorted array of values.
+
+```
+function interpolationSearch(arr, target) {
+  let low = 0;
+  let high = arr.length - 1;
+
+  while (low <= high && target >= arr[low] && target <= arr[high]) {
+    // Estimate the probable position of the target value
+    const pos = low + Math.floor(((target - arr[low]) * (high - low)) / (arr[high] - arr[low]));
+
+    if (arr[pos] === target) {
+      return pos; // Target found
+    } else if (arr[pos] < target) {
+      low = pos + 1; // Narrow the search to the right half
+    } else {
+      high = pos - 1; // Narrow the search to the left half
+    }
+  }
+
+  return -1; // Target not found
+}
+
+// Example usage:
+const sortedArray = [2, 4, 7, 10, 23, 45, 56, 67, 78];
+const targetValue = 23;
+const result = interpolationSearch(sortedArray, targetValue);
+
+if (result !== -1) {
+  console.log(`Element found at index ${result}`);
+} else {
+  console.log("Element not found in the array");
+}
+// Element found at index 4
+```
+
+**Linear Search:** Linear Search, also known as sequential search, is a simple searching algorithm used to find a specific target value within a collection, such as an array or list.
+
+```
+function linearSearch(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) {
+      return i; // Return the index of the target if found
+    }
+  }
+  return -1; // Return -1 if the target is not found in the array
+}
+
+// Example usage:
+const arrayToSearch = [2, 4, 7, 10, 23, 45, 56, 67, 78];
+const targetValue = 23;
+const result = linearSearch(arrayToSearch, targetValue);
+
+if (result !== -1) {
+  console.log(`Element found at index ${result}`); // Element found at index 4
+} else {
+  console.log("Element not found in the array");
+}
+```
