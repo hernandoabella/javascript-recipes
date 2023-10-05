@@ -1006,11 +1006,11 @@ const sortedPerson = Object.entries(person)
   }, {});
 ```
 
-- **Iterators**
+### Iterators
   - Reverse Iterator
   - Simple Iterator
-- **Queue (FIFO)**
-- **Sets**
+### Queue (FIFO)
+### Sets
   - Adding and Removing Elements
   - Converting a Set
   - Filtering Elements
@@ -1021,9 +1021,10 @@ const sortedPerson = Object.entries(person)
   - Sets Operations
   - Sorted Set
   - Sorting of Elements
-- **Stacks (LIFO)**
 
-### Control Flow
+### Stacks (LIFO)
+
+## Control Flow
 
 - **Conditional Statements**
   - If/Else Statements
