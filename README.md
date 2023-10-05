@@ -1,4 +1,4 @@
-# JavaScript Recipes
+# JavaScript Recipes 👨‍🍳
 
 ## Table of Contents
 
@@ -384,25 +384,25 @@
 
 Algorithms are step-by-step procedures for solving specific problems or performing tasks. They are crucial in computer science and programming for efficient problem-solving.
 **Bubble Sort:** Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order.
-// Bubble Sort Example
-function bubbleSort(arr) {
-const n = arr.length;
-for (let i = 0; i < n - 1; i++) {
-for (let j = 0; j < n - i - 1; j++) {
-if (arr[j] > arr[j + 1]) {
-// Swap the elements
-let temp = arr[j];
-arr[j] = arr[j + 1];
-arr[j + 1] = temp;
-}
-}
-}
-return arr;
-}
+    // Bubble Sort Example
+    function bubbleSort(arr) {
+    const n = arr.length;
+    for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+    if (arr[j] > arr[j + 1]) {
+    // Swap the elements
+    let temp = arr[j];
+    arr[j] = arr[j + 1];
+    arr[j + 1] = temp;
+    }
+    }
+    }
+    return arr;
+    }
 
     const exampleArray = [64, 34, 25, 12, 22, 11, 90];
     const sortedArray = bubbleSort(exampleArray);
-    console.log(sortedArray); // Output: [11, 12, 22, 25, 34, 64, 90]
+    console.log(sortedArray); // [11, 12, 22, 25, 34, 64, 90]
 
 **Counting Sort:** Counting Sort is an integer sorting algorithm that works by counting the number of occurrences of each element and using that information to place elements in sorted order.
 
@@ -428,7 +428,7 @@ return arr;
 
     const exampleArray = [4, 2, 2, 8, 3, 3, 1];
     const sortedArray = countingSort(exampleArray);
-    console.log(sortedArray); // Output: [1, 2, 2, 3, 3, 4, 8]
+    console.log(sortedArray); // [1, 2, 2, 3, 3, 4, 8]
 
 **Merge Sort:** Merge Sort is a divide-and-conquer sorting algorithm that divides an array into smaller sub-arrays, sorts them, and then merges them back together.
 
@@ -463,7 +463,7 @@ return arr;
 
     const exampleArray = [38, 27, 43, 3, 9, 82, 10];
     const sortedArray = mergeSort(exampleArray);
-    console.log(sortedArray); // Output: [3, 9, 10, 27, 38, 43, 82]
+    console.log(sortedArray); // [3, 9, 10, 27, 38, 43, 82]
 
 **Quick Sort:** Quick Sort is another divide-and-conquer sorting algorithm that works by selecting a "pivot" element and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot.
 
@@ -488,7 +488,7 @@ return arr;
 
     const exampleArray = [38, 27, 43, 3, 9, 82, 10];
     const sortedArray = quickSort(exampleArray);
-    console.log(sortedArray); // Output: [3, 9, 10, 27, 38, 43, 82]
+    console.log(sortedArray); // [3, 9, 10, 27, 38, 43, 82]
 
 **Radix Sort:** Radix Sort is a non-comparative integer sorting algorithm that sorts data with integer keys by grouping keys by individual digits that share the same significant position.
 
@@ -529,4 +529,4 @@ return arr;
 
     const exampleArray = [170, 45, 75, 90, 802, 24, 2, 66];
     const sortedArray = radixSort(exampleArray);
-    console.log(sortedArray); // Output: [2, 24, 45, 66, 75, 90, 170, 802]
+    console.log(sortedArray); // [2, 24, 45, 66, 75, 90, 170, 802]
