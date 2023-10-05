@@ -848,24 +848,164 @@ const allEven = numbers.every(num => num % 2 === 0); // Checks if all are even
 const someEven = numbers.some(num => num % 2 === 0); // Checks if some are even
 ```
 
-**Dictionaries**
+### Dictionaries:
 
-- Adding and Removing Elements
-- Amount of Elements
-- Checking Presence of a Key
-- Converting a Dictionary
-- Default Value
-- Dictionaries Initialization
-- Dictionary Merge
-- Filtering Elements
-- Get Value by Key
-- Getting Keys by Value
-- Getting a List of Keys
-- Getting a List of Values
-- Grouping Collection
-- Iterating Over a Dictionary
-- Sort Dictionary by Keys
-- Sort Dictionary by Values
+**Adding Elements:** To add a key-value pair to a dictionary, simply assign a value to a new key.
+
+```
+const person = {};
+person.name = 'John';
+person.age = 30;
+```
+
+**Removing Elements:** To remove a key-value pair, you can use the delete keyword.
+
+```
+delete person.age; // Removes the 'age' key and its value
+```
+
+**Amount of Elements:** You can get the number of key-value pairs in a dictionary using the Object.keys() method.
+
+```
+const person = { name: 'John', age: 30 };
+const numberOfKeys = Object.keys(person).length; // Returns 2
+```
+
+**Checking Presence of a Key:** You can check if a key exists in a dictionary using the hasOwnProperty() method.
+
+```
+if (person.hasOwnProperty('name')) {
+  // 'name' key exists in the dictionary
+}
+```
+
+**Converting a Dictionary:** You can convert a dictionary to a string or JSON using JSON.stringify().
+
+```
+const person = { name: 'John', age: 30 };
+const personJSON = JSON.stringify(person); // Converts to JSON string
+```
+
+**Default Value:** You can provide a default value when accessing a key to handle cases where the key doesn't exist.
+
+```
+const person = {};
+const name = person.name || 'Default Name'; // Uses 'Default Name' as a default
+```
+
+**Dictionaries Initialization:** You can initialize a dictionary with key-value pairs using object literals.
+
+```
+const person = { name: 'John', age: 30 };
+```
+
+**Dictionary Merge:** You can merge two dictionaries using the spread operator (...).
+
+```
+const person1 = { name: 'John' };
+const person2 = { age: 30 };
+const mergedPerson = { ...person1, ...person2 }; // Merges both dictionaries
+```
+
+**Filtering Elements:** You can filter key-value pairs in a dictionary using the filter() method.
+
+```
+const person = { name: 'John', age: 30, job: 'Engineer' };
+const filteredPerson = Object.keys(person)
+  .filter(key => key !== 'age')
+  .reduce((obj, key) => {
+    obj[key] = person[key];
+    return obj;
+  }, {});
+```
+
+**Get Value by Key:** You can access the value associated with a key using square brackets or the dot notation.
+
+```
+const person = { name: 'John', age: 30 };
+const name = person['name']; // Access by key
+const age = person.age; // Access by dot notation
+```
+
+**Getting Keys by Value:** To get all keys associated with a specific value, you can use a loop.
+
+```
+const person = { name: 'John', age: 30, job: 'Engineer' };
+const keysWithValue = [];
+for (const key in person) {
+  if (person[key] === 30) {
+    keysWithValue.push(key);
+  }
+}
+```
+
+**Getting a List of Keys:** You can obtain a list of keys in a dictionary using Object.keys().
+
+```
+const person = { name: 'John', age: 30 };
+const keys = Object.keys(person); // Returns ['name', 'age']
+```
+
+**Getting a List of Values:** To get a list of values in a dictionary, you can use Object.values().
+
+```
+const person = { name: 'John', age: 30 };
+const values = Object.values(person); // Returns ['John', 30]
+```
+
+**Grouping Collection:** You can group data into a dictionary by iterating through a collection and organizing it by a specific key.
+
+```
+const people = [
+  { name: 'John', age: 30 },
+  { name: 'Alice', age: 25 },
+  { name: 'Bob', age: 30 }
+];
+
+const groupedByAge = {};
+
+people.forEach(person => {
+  if (!groupedByAge[person.age]) {
+    groupedByAge[person.age] = [];
+  }
+  groupedByAge[person.age].push(person);
+});
+```
+
+**Iterating Over a Dictionary:** You can iterate over key-value pairs in a dictionary using a for...in loop.
+
+```
+const person = { name: 'John', age: 30 };
+for (const key in person) {
+  const value = person[key];
+  // Do something with key and value
+}
+```
+
+**Sort Dictionary by Keys:** To sort a dictionary by its keys, you can use Object.keys() to get the keys, sort them, and then create a new dictionary based on the sorted keys.
+
+```
+const person = { name: 'John', age: 30, job: 'Engineer' };
+const sortedPerson = Object.keys(person)
+  .sort()
+  .reduce((obj, key) => {
+    obj[key] = person[key];
+    return obj;
+  }, {});
+```
+
+**Sort Dictionary by Values:** To sort a dictionary by its values, you can use Object.entries() to get key-value pairs, sort them by values, and then create a new dictionary based on the sorted key-value pairs.
+
+```
+const person = { name: 'John', age: 30, job: 'Engineer' };
+const sortedPerson = Object.entries(person)
+  .sort((a, b) => a[1] - b[1]) // Sort by values
+  .reduce((obj, [key, value]) => {
+    obj[key] = value;
+    return obj;
+  }, {});
+```
+
 - **Iterators**
   - Reverse Iterator
   - Simple Iterator
@@ -882,3 +1022,311 @@ const someEven = numbers.some(num => num % 2 === 0); // Checks if some are even
   - Sorted Set
   - Sorting of Elements
 - **Stacks (LIFO)**
+
+### Control Flow
+
+- **Conditional Statements**
+  - If/Else Statements
+    - Complex Conditions
+    - Ternary Operator
+  - Switch/Case Statements
+    - Different Types of Values
+    - Simple Conditions
+    - Without the `break` Operator
+- **Interruption of Control Flow**
+  - Break Statement
+  - Continue Statement
+  - Return Statement
+  - Labeled Statement
+- **Loops**
+  - Do-While Loop
+  - For Loop
+  - For-In Loop
+  - For-Of Loop
+  - ForEach Loop
+  - While Loop
+  - Endless Loop
+- **Other Operations**
+  - Debugger Statement
+  - With Statement
+
+### Enumerations
+
+- Base Member Value
+- Base Type
+- Conversion from a String
+- Converting to a String
+- Definition and Initialization
+- Enum Comparison
+- Explicitly Set Base Value
+- Get the List of Values
+- Initializing from a Base Value
+
+### Exceptions Handlin
+
+- Catch All Exceptions
+- Catch a Specific Exception
+- Define an Exception Type
+- Guaranteed Code Execution
+- Method Throwing an Exception
+- Re-Throw Exceptions
+- Throw an Exception
+
+### Extensions
+
+- Adding Object Methods
+- Adding Properties
+- Adding Type Methods
+- Simple Types Extension
+
+### Functions
+
+- Array of Parameters
+- In/Out Parameters
+- Multiple Return Values
+- Optional Parameter Values
+- Recursion
+- Variable Parameters
+- With Return Value
+- Without Any Parameters
+- Without Any Return Value
+
+### Generic Types
+
+- Generic Classes
+- Generic Methods
+- Substitution Principle
+
+### Initializing of Types
+
+- Classes
+  - With a Constructor
+  - Without Any Constructor
+- Collections
+  - Arrays
+  - Dictionaries
+  - Set
+
+### Differences Between `var` and `let`
+
+### Enumerations
+
+- Simple Types
+- Structures
+  - Without Any Constructor
+- Interfaces
+  - Conformance Checking (is, as)
+  - Constructor Requirements
+  - Declaration and Initialization
+  - Interfaces Collection
+  - Interfaces Inheritance
+  - Methods Requirements
+  - Properties Requirements
+
+### Lambda Expressions
+
+- Capture of Variables
+- Currying
+- Function as a Parameter
+- Function as a Return Value
+- Memoization
+- Memoization (Recursive)
+- Modify Captured Variable
+- Recursion
+- With Multiple Operators
+- With Multiple Parameters
+- With One Parameter
+- Without Return Value
+
+### Multi-Threaded Operations
+
+- Asynchronous Call
+- Asynchronous Call with a Result
+- Error Handling
+- Keywords `async` and `await`
+- Start of a New Thread
+- Start of a New Thread and Waiting
+- Operators Overloading
+
+### Design Patterns
+
+- **Behavioral Patterns**
+  - Chain of Responsibility
+  - Command
+  - Interpreter
+  - Iterator
+  - Mediator
+  - Memento
+  - Observer
+  - State
+  - Strategy
+  - Template Method
+  - Visitor
+- **Creational Patterns**
+  - Abstract Factory
+  - Builder
+  - Factory Method
+  - Prototype
+  - Singleton
+- **Structural Patterns**
+  - Adapter (Composition)
+  - Adapter (Inheritance)
+  - Bridge
+  - Composite
+  - Decorator
+  - Facade
+  - Flyweight
+  - Proxy
+
+### Regular Expressions
+
+- Check Match String
+- Check Match Whole String
+- Named Groups
+- Regular Expression Options
+- Replacement of the Match
+- Replacement Using a Function
+- Search All Matches
+- Search for a Match
+
+### Structures (Records)
+
+- Constants
+- Constructors
+- Definition and Initialization
+- Fields and Properties
+- Methods
+- Structure Inside the Structure
+- Type Members
+
+### Universal (Dynamic) Types
+
+- Call Type Members
+- Initialization
+- Return Value
+
+### Work with Color
+
+- Color to HTML Color
+- Color to RGB
+- HTML Color to RGB
+- RGB to Color
+
+### Work with Database (DB)
+
+- Connect to the DB
+  - Connect to Firebird
+  - Connect to MySQL
+  - Connect to Oracle
+  - Connect to PostgreSQL
+  - Connect to SQL Server
+  - Connect to SQLite
+- Execute SQL Command
+- Execute SQL Query
+- SQL Query with Parameters
+
+### Work with Files
+
+- **Archives**
+  - Packing a Zip File
+  - Packing a Zip File with a Password
+  - Unpacking a Zip File
+- **Basic Operations**
+  - Check If the File Exists
+  - Copy a Directory
+  - Create a Directory
+  - Delete a Directory
+  - Delete a Directory with Data
+  - Delete a File
+  - File Copying
+  - File Moving
+  - Get the Working Directory
+  - Getting File Properties
+  - List of Files in the Directory
+- **Binary Files**
+  - Read Array from a File
+  - Read Dictionary from a File
+  - Reading a Binary File
+  - Write Array to a File
+  - Write Dictionary to a File
+  - Writing a Binary File
+- **Text Files**
+  - Append Text to a File
+  - Read File Line by Line
+  - Read from a File
+  - Write to a File
+- **XML Files**
+  - Reading an XML File
+
+### Work with Simple Types
+
+- **Boolean**
+  - Conversion from a String
+  - Converting to a String
+  - Getting Values
+  - Logical Operations
+- **Character Type**
+  - Converting to a Number and Back
+  - Converting to a String
+  - Escape Characters
+  - Getting from a String
+- **Date and Time**
+  - Comparison of Dates
+  - Conversion from a String
+  - Converting to a String
+  - Date Changing
+  - Date Initialization
+  - Getting the Current Date
+  - Getting Year, Month, Day
+  - The Interval Between Dates
+- **Nullable Types**
+  - Checking Presence of a Value
+  - Initialization
+- **Numbers**
+  - **Double and Float**
+    - Arithmetic Operations
+    - Conversion from a String
+    - Converting to a String
+    - Converting to Integer
+    - Getting Random Values
+    - Rounding and Truncating
+  - **Integers**
+    - Arithmetic Operations
+    - BigInteger
+    - Bitwise Operations
+    - Conversion from a String
+    - Converting to a String
+    - Getting Random Values
+    - Numerical System
+  - **Mathematical Operations**
+    - Decimal Logarithm
+    - Exponentiation
+    - Logarithm
+    - Sine, Cosine, and Tangent
+    - Square Root
+    - Min and Max Values
+- **Strings**
+  - Change the Case of Characters
+  - Character Replacement
+  - Characters Count
+  - Converting to a Number
+  - Empty Strings
+  - Escaping Characters
+  - Getting Substring
+  - Iterating Over a String
+  - Removing Spaces
+  - Replace Multiple Characters
+  - Split Into an Array
+  - String Multiplication
+  - String Padding
+  - Strings Comparison
+  - Strings Concatenating
+  - String Interpolation
+  - String List Concatenating
+  - Substring Index
+  - Substring Inserting
+  - Substring Removing
+  - Substring Replacement
+  - Substring Searching
+- **Tuple**
+  This structure should help organize your JavaScript recipes guide effectively.
