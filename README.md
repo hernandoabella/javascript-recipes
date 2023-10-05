@@ -685,3 +685,59 @@ if (result !== -1) {
   console.log("Element not found in the array");
 }
 ```
+
+## Arrays and Collections
+
+### Arrays:
+  - Adding and Removing Elements
+  - Array Copying
+  - Array Length
+  - Array with Default Value
+  - Comparing Arrays
+  - Arrays Initialization
+  - Arrays Merging
+  - Checking Equality of Arrays
+  - Converting an Array
+  - Dynamic Arrays
+  - Filtering Elements
+  - Finding an Array Element
+  - Getting Min and Max Values
+  - Getting Part of an Array
+  - Getting Unique Values
+  - Iterating Over an Array
+  - Iterating Over an Array with Index
+  - Sorting of Elements
+  - `every()` and `some()` Methods
+- **Dictionaries**
+  - Adding and Removing Elements
+  - Amount of Elements
+  - Checking Presence of a Key
+  - Converting a Dictionary
+  - Default Value
+  - Dictionaries Initialization
+  - Dictionary Merge
+  - Filtering Elements
+  - Get Value by Key
+  - Getting Keys by Value
+  - Getting a List of Keys
+  - Getting a List of Values
+  - Grouping Collection
+  - Iterating Over a Dictionary
+  - Sort Dictionary by Keys
+  - Sort Dictionary by Values
+- **Iterators**
+  - Reverse Iterator
+  - Simple Iterator
+- **Queue (FIFO)**
+- **Sets**
+  - Adding and Removing Elements
+  - Converting a Set
+  - Filtering Elements
+  - Iterating Over a Set
+  - Search for an Element
+  - Set Comparison
+  - Sets Initialization
+  - Sets Operations
+  - Sorted Set
+  - Sorting of Elements
+- **Stacks (LIFO)**
