@@ -384,25 +384,32 @@
 
 Algorithms are step-by-step procedures for solving specific problems or performing tasks. They are crucial in computer science and programming for efficient problem-solving.
 **Bubble Sort:** Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order.
-    // Bubble Sort Example
     function bubbleSort(arr) {
-    const n = arr.length;
-    for (let i = 0; i < n - 1; i++) {
-    for (let j = 0; j < n - i - 1; j++) {
-    if (arr[j] > arr[j + 1]) {
-    // Swap the elements
-    let temp = arr[j];
-    arr[j] = arr[j + 1];
-    arr[j + 1] = temp;
-    }
-    }
-    }
-    return arr;
+      var len = arr.length;
+      var swapped;
+
+      do {
+        swapped = false;
+        for (var i = 0; i < len - 1; i++) {
+          if (arr[i] > arr[i + 1]) {
+            // Swap the elements
+            var temp = arr[i];
+            arr[i] = arr[i + 1];
+            arr[i + 1] = temp;
+            swapped = true;
+          }
+        }
+      } while (swapped);
+
+      return arr;
     }
 
-    const exampleArray = [64, 34, 25, 12, 22, 11, 90];
-    const sortedArray = bubbleSort(exampleArray);
-    console.log(sortedArray); // [11, 12, 22, 25, 34, 64, 90]
+    // Example usage:
+    var unsortedArray = [64, 34, 25, 12, 22, 11, 90];
+    var sortedArray = bubbleSort(unsortedArray);
+    console.log(sortedArray); // [ 11, 12, 22, 25, 34, 64, 90 ]
+
+
 
 **Counting Sort:** Counting Sort is an integer sorting algorithm that works by counting the number of occurrences of each element and using that information to place elements in sorted order.
 
