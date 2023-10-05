@@ -383,157 +383,177 @@
 ### Algorithms
 
 Algorithms are step-by-step procedures for solving specific problems or performing tasks. They are crucial in computer science and programming for efficient problem-solving.
+
 **Bubble Sort:** Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order.
-    function bubbleSort(arr) {
-      var len = arr.length;
-      var swapped;
 
-      do {
-        swapped = false;
-        for (var i = 0; i < len - 1; i++) {
-          if (arr[i] > arr[i + 1]) {
-            // Swap the elements
-            var temp = arr[i];
-            arr[i] = arr[i + 1];
-            arr[i + 1] = temp;
-            swapped = true;
-          }
-        }
-      } while (swapped);
+```
+function bubbleSort(arr) {
+  const len = arr.length;
+  let swapped;
 
-      return arr;
+  do {
+    swapped = false;
+
+    for (let i = 0; i < len - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        // Swap the elements
+        const temp = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = temp;
+        swapped = true;
+      }
     }
+  } while (swapped);
 
-    // Example usage:
-    var unsortedArray = [64, 34, 25, 12, 22, 11, 90];
-    var sortedArray = bubbleSort(unsortedArray);
-    console.log(sortedArray); // [ 11, 12, 22, 25, 34, 64, 90 ]
+  return arr;
+}
 
-
+// Example usage:
+const unsortedArray = [64, 34, 25, 12, 22, 11, 90];
+const sortedArray = bubbleSort(unsortedArray);
+console.log(sortedArray); // [ 11, 12, 22, 25, 34, 64, 90 ]
+```
 
 **Counting Sort:** Counting Sort is an integer sorting algorithm that works by counting the number of occurrences of each element and using that information to place elements in sorted order.
 
-    // Counting Sort Example
-    function countingSort(arr) {
-      const max = Math.max(...arr);
-      const count = Array(max + 1).fill(0);
-      const output = [];
+```
+function countingSort(arr) {
+  // Find the maximum element in the input array
+  const max = Math.max(...arr);
 
-      for (let i = 0; i < arr.length; i++) {
-        count[arr[i]]++;
-      }
+  // Create an array to store the count of each element
+  const countArray = new Array(max + 1).fill(0);
 
-      for (let i = 0; i <= max; i++) {
-        while (count[i] > 0) {
-          output.push(i);
-          count[i]--;
-        }
-      }
+  // Count the occurrences of each element in the input array
+  for (let i = 0; i < arr.length; i++) {
+    countArray[arr[i]]++;
+  }
 
-      return output;
+  // Reconstruct the sorted array using the count information
+  const sortedArray = [];
+  for (let i = 0; i < countArray.length; i++) {
+    while (countArray[i] > 0) {
+      sortedArray.push(i);
+      countArray[i]--;
     }
+  }
 
-    const exampleArray = [4, 2, 2, 8, 3, 3, 1];
-    const sortedArray = countingSort(exampleArray);
-    console.log(sortedArray); // [1, 2, 2, 3, 3, 4, 8]
+  return sortedArray;
+}
+
+// Example usage:
+const unsortedArray = [4, 2, 2, 8, 3, 3, 1];
+const sortedArray = countingSort(unsortedArray);
+console.log(sortedArray); // [ 1, 2, 2, 3, 3, 4, 8 ]
+```
 
 **Merge Sort:** Merge Sort is a divide-and-conquer sorting algorithm that divides an array into smaller sub-arrays, sorts them, and then merges them back together.
 
-    // Merge Sort Example
-    function mergeSort(arr) {
-      if (arr.length <= 1) return arr;
+```
+function mergeSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
 
-      const mid = Math.floor(arr.length / 2);
-      const left = arr.slice(0, mid);
-      const right = arr.slice(mid);
+  // Split the input array into two halves
+  const middle = Math.floor(arr.length / 2);
+  const leftHalf = arr.slice(0, middle);
+  const rightHalf = arr.slice(middle);
 
-      const merge = (left, right) => {
-        const result = [];
-        let leftIndex = 0;
-        let rightIndex = 0;
+  // Recursively sort the two halves
+  const sortedLeft = mergeSort(leftHalf);
+  const sortedRight = mergeSort(rightHalf);
 
-        while (leftIndex < left.length && rightIndex < right.length) {
-          if (left[leftIndex] < right[rightIndex]) {
-            result.push(left[leftIndex]);
-            leftIndex++;
-          } else {
-            result.push(right[rightIndex]);
-            rightIndex++;
-          }
-        }
+  // Merge the sorted halves back together
+  return merge(sortedLeft, sortedRight);
+}
 
-        return result.concat(left.slice(leftIndex), right.slice(rightIndex));
-      };
+function merge(left, right) {
+  let result = [];
+  let leftIndex = 0;
+  let rightIndex = 0;
 
-      return merge(mergeSort(left), mergeSort(right));
+  // Compare elements from both halves and add the smaller one to the result
+  while (leftIndex < left.length && rightIndex < right.length) {
+    if (left[leftIndex] < right[rightIndex]) {
+      result.push(left[leftIndex]);
+      leftIndex++;
+    } else {
+      result.push(right[rightIndex]);
+      rightIndex++;
     }
+  }
 
-    const exampleArray = [38, 27, 43, 3, 9, 82, 10];
-    const sortedArray = mergeSort(exampleArray);
-    console.log(sortedArray); // [3, 9, 10, 27, 38, 43, 82]
+  // Concatenate any remaining elements from both halves (if any)
+  return result.concat(left.slice(leftIndex), right.slice(rightIndex));
+}
+
+// Example usage:
+const unsortedArray = [38, 27, 43, 3, 9, 82, 10];
+const sortedArray = mergeSort(unsortedArray);
+console.log(sortedArray);
+```
 
 **Quick Sort:** Quick Sort is another divide-and-conquer sorting algorithm that works by selecting a "pivot" element and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot.
 
-    // Quick Sort Example
-    function quickSort(arr) {
-      if (arr.length <= 1) return arr;
+```
+function quickSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
 
-      const pivot = arr[arr.length - 1];
-      const left = [];
-      const right = [];
+  // Select a pivot element (usually the first or last element)
+  const pivot = arr[Math.floor(arr.length / 2)];
 
-      for (let i = 0; i < arr.length - 1; i++) {
-        if (arr[i] < pivot) {
-          left.push(arr[i]);
-        } else {
-          right.push(arr[i]);
-        }
-      }
+  // Divide the array into two sub-arrays: elements less than the pivot and elements greater than the pivot
+  const left = arr.filter((element) => element < pivot);
+  const middle = arr.filter((element) => element === pivot);
+  const right = arr.filter((element) => element > pivot);
 
-      return [...quickSort(left), pivot, ...quickSort(right)];
-    }
+  // Recursively sort the sub-arrays and concatenate them
+  return quickSort(left).concat(middle, quickSort(right));
+}
 
-    const exampleArray = [38, 27, 43, 3, 9, 82, 10];
-    const sortedArray = quickSort(exampleArray);
-    console.log(sortedArray); // [3, 9, 10, 27, 38, 43, 82]
+// Example usage:
+const unsortedArray = [38, 27, 43, 3, 9, 82, 10];
+const sortedArray = quickSort(unsortedArray);
+console.log(sortedArray); // [ 3, 9, 10, 27, 38, 43, 82 ]
+```
 
 **Radix Sort:** Radix Sort is a non-comparative integer sorting algorithm that sorts data with integer keys by grouping keys by individual digits that share the same significant position.
 
-    // Radix Sort Example
-    function radixSort(arr) {
-      const max = Math.max(...arr);
-      let exp = 1;
+```
+function radixSort(arr) {
+  const max = Math.max(...arr);
+  const maxDigitCount = getMaxDigitCount(max);
 
-      while (Math.floor(max / exp) > 0) {
-        countingSortByDigit(arr, exp);
-        exp *= 10;
-      }
+  for (let digitPlace = 0; digitPlace < maxDigitCount; digitPlace++) {
+    const digitBuckets = Array.from({ length: 10 }, () => []);
 
-      return arr;
+    for (let i = 0; i < arr.length; i++) {
+      const digit = getDigit(arr[i], digitPlace);
+      digitBuckets[digit].push(arr[i]);
     }
 
-    function countingSortByDigit(arr, exp) {
-      const output = Array(arr.length).fill(0);
-      const count = Array(10).fill(0);
+    arr = [].concat(...digitBuckets);
+  }
 
-      for (let i = 0; i < arr.length; i++) {
-        count[Math.floor(arr[i] / exp) % 10]++;
-      }
+  return arr;
+}
 
-      for (let i = 1; i < 10; i++) {
-        count[i] += count[i - 1];
-      }
+// Helper function to get the maximum number of digits in an array of integers
+function getMaxDigitCount(num) {
+  if (num === 0) return 1;
+  return Math.floor(Math.log10(Math.abs(num))) + 1;
+}
 
-      for (let i = arr.length - 1; i >= 0; i--) {
-        output[count[Math.floor(arr[i] / exp) % 10] - 1] = arr[i];
-        count[Math.floor(arr[i] / exp) % 10]--;
-      }
+// Helper function to get the digit at a given place value
+function getDigit(num, place) {
+  return Math.floor(Math.abs(num) / Math.pow(10, place)) % 10;
+}
 
-      for (let i = 0; i < arr.length; i++) {
-        arr[i] = output[i];
-      }
-    }
-
-    const exampleArray = [170, 45, 75, 90, 802, 24, 2, 66];
-    const sortedArray = radixSort(exampleArray);
-    console.log(sortedArray); // [2, 24, 45, 66, 75, 90, 170, 802]
+// Example usage:
+const unsortedArray = [170, 45, 75, 90, 802, 24, 2, 66];
+const sortedArray = radixSort(unsortedArray);
+console.log(sortedArray); // [ 2, 24, 45, 66, 75, 90, 170, 802 ]
+```
