@@ -380,11 +380,11 @@
 - **Tuple**
   This structure should help organize your JavaScript recipes guide effectively.
 
-### Algorithms
+## Algorithms
 
 Algorithms are step-by-step procedures for solving specific problems or performing tasks. They are crucial in computer science and programming for efficient problem-solving.
 
-**Sorting:**
+### Sorting Algorithms:
 
 **Bubble Sort:** Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order.
 
@@ -560,7 +560,8 @@ const sortedArray = radixSort(unsortedArray);
 console.log(sortedArray); // [ 2, 24, 45, 66, 75, 90, 170, 802 ]
 ```
 
-**Searching:**
+### Searching Algorithms:
+
 
 **Binary Search:** Binary search is a widely used search algorithm that efficiently finds a specific target value within a sorted array.
 
