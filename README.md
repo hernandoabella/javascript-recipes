@@ -1030,20 +1030,115 @@ for (const fruit of fruits) {
 
 ### Queue (FIFO)
 
+In JavaScript, you can implement a queue using an array. To add elements to the end (enqueue) and remove elements from the beginning (dequeue), you can use the push() and shift() methods, respectively.
+
+```
+const queue = [];
+queue.push('item1'); // Enqueue item1
+queue.push('item2'); // Enqueue item2
+const dequeuedItem = queue.shift(); // Dequeue item1
+```
+
 ### Sets
 
-- Adding and Removing Elements
-- Converting a Set
-- Filtering Elements
-- Iterating Over a Set
-- Search for an Element
-- Set Comparison
-- Sets Initialization
-- Sets Operations
-- Sorted Set
-- Sorting of Elements
+**Adding and Removing Elements:** You can add elements to a Set using the add() method and remove elements using the delete() method.
+
+```
+const colors = new Set();
+colors.add('red');
+colors.add('blue');
+colors.delete('red'); // Removes 'red' from the Set
+```
+
+**Converting a Set:** You can convert a Set to an array using the spread operator (...) or the Array.from() method.
+
+```
+const colors = new Set(['red', 'blue', 'green']);
+const colorArray = [...colors]; // Converts to an array
+```
+
+**Filtering Elements:** You can filter elements in a Set using the forEach() method and a callback function.
+
+```
+const numbers = new Set([1, 2, 3, 4, 5]);
+const evenNumbers = new Set();
+numbers.forEach(num => {
+  if (num % 2 === 0) {
+    evenNumbers.add(num);
+  }
+});
+```
+
+**Iterating Over a Set:** You can iterate over the elements of a Set using a for...of loop.
+
+```
+const fruits = new Set(['apple', 'banana', 'cherry']);
+for (const fruit of fruits) {
+  console.log(fruit);
+}
+```
+
+**Search for an Element:** You can check if an element exists in a Set using the has() method.
+
+```
+const colors = new Set(['red', 'blue', 'green']);
+const hasBlue = colors.has('blue'); // Returns true
+```
+
+**Set Comparison:** You can compare two Sets for equality by converting them to arrays and comparing the arrays.
+
+```
+const set1 = new Set(['a', 'b', 'c']);
+const set2 = new Set(['c', 'b', 'a']);
+const areEqual = JSON.stringify([...set1]) === JSON.stringify([...set2]); // Compares element values
+```
+
+**Sets Initialization:** You can initialize a Set with values using the Set constructor.
+
+```
+const fruits = new Set(['apple', 'banana', 'cherry']);
+```
+
+**Sets Operations:** Sets support various set operations such as union, intersection, and difference.
+
+```
+const set1 = new Set([1, 2, 3]);
+const set2 = new Set([3, 4, 5]);
+
+// Union
+const unionSet = new Set([...set1, ...set2]); // Contains {1, 2, 3, 4, 5}
+
+// Intersection
+const intersectionSet = new Set([...set1].filter(x => set2.has(x))); // Contains {3}
+
+// Difference
+const differenceSet = new Set([...set1].filter(x => !set2.has(x))); // Contains {1, 2}
+```
+
+**Sorted Set:** JavaScript Sets are inherently unordered. To create a sorted set, you can convert the Set to an array, sort it, and then create a new Set.
+
+```
+const numbers = new Set([5, 2, 8, 1, 3]);
+const sortedSet = new Set([...numbers].sort((a, b) => a - b));
+```
+
+**Sorting of Elements:** To sort the elements of a Set, you can first convert it to an array and then use the sort() method.
+
+```
+const colors = new Set(['red', 'blue', 'green']);
+const sortedColors = [...colors].sort();
+```
 
 ### Stacks (LIFO)
+
+In JavaScript, you can implement a stack using an array. To add elements to the end (push) and remove elements from the end (pop), you can use the push() and pop() methods, respectively.
+
+```
+const stack = [];
+stack.push('item1'); // Pushes item1 onto the stack
+stack.push('item2'); // Pushes item2 onto the stack
+const poppedItem = stack.pop(); // Pops item2 from the stack
+```
 
 ## Control Flow
 
