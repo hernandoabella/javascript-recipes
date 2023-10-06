@@ -1005,7 +1005,7 @@ const sortedPerson = Object.entries(person)
   }, {});
 ```
 
-### Iterators
+### Iterators:
 
 **Reverse Iterator:** To create a reverse iterator, you can use a for...of loop in combination with the reverse() method to iterate over an array in reverse order.
 
@@ -1028,7 +1028,7 @@ for (const fruit of fruits) {
 // cherry
 ```
 
-### Queue (FIFO)
+### Queue (FIFO):
 
 In JavaScript, you can implement a queue using an array. To add elements to the end (enqueue) and remove elements from the beginning (dequeue), you can use the push() and shift() methods, respectively.
 
@@ -1039,7 +1039,7 @@ queue.push('item2'); // Enqueue item2
 const dequeuedItem = queue.shift(); // Dequeue item1
 ```
 
-### Sets
+### Sets:
 
 **Adding and Removing Elements:** You can add elements to a Set using the add() method and remove elements using the delete() method.
 
@@ -1142,28 +1142,28 @@ const poppedItem = stack.pop(); // Pops item2 from the stack
 
 ## Control Flow
 
-- **Conditional Statements**
-  - If/Else Statements
-    - Complex Conditions
-    - Ternary Operator
-  - Switch/Case Statements
-    - Different Types of Values
-    - Simple Conditions
-    - Without the `break` Operator
-- **Interruption of Control Flow**
-  - Break Statement
-  - Continue Statement
-  - Return Statement
-  - Labeled Statement
-- **Loops**
-  - Do-While Loop
+### Conditional Statements
+If/Else Statements
+Complex Conditions
+Ternary Operator
+Switch/Case Statements
+Different Types of Values
+Simple Conditions
+Without the `break` Operator
+### Interruption of Control Flow:
+Break Statement
+Continue Statement
+Return Statement
+Labeled Statement
+### Loops:
+Do-While Loop
   - For Loop
   - For-In Loop
   - For-Of Loop
   - ForEach Loop
   - While Loop
   - Endless Loop
-- **Other Operations**
+### Other Operations:
   - Debugger Statement
   - With Statement
 
