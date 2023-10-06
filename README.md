@@ -698,7 +698,6 @@ const colors = ['red', 'blue'];
 colors.push('green'); // Adds 'green' to the end
 ```
 
-
 **Removing Elements:** You can remove elements from the end of an array using the pop() method.
 
 ```
@@ -1007,20 +1006,42 @@ const sortedPerson = Object.entries(person)
 ```
 
 ### Iterators
-  - Reverse Iterator
-  - Simple Iterator
+
+**Reverse Iterator:** To create a reverse iterator, you can use a for...of loop in combination with the reverse() method to iterate over an array in reverse order.
+
+```
+const numbers = [1, 2, 3, 4, 5];
+for (const num of numbers.reverse()) {
+  console.log(num); // Prints 5, 4, 3, 2, 1
+}
+```
+
+**Simple Iterator:** A simple iterator can be created using a for...of loop to iterate over the elements of an iterable (e.g., an array).
+
+```
+const fruits = ['apple', 'banana', 'cherry'];
+for (const fruit of fruits) {
+  console.log(fruit);
+}
+// apple
+// banana
+// cherry
+```
+
 ### Queue (FIFO)
+
 ### Sets
-  - Adding and Removing Elements
-  - Converting a Set
-  - Filtering Elements
-  - Iterating Over a Set
-  - Search for an Element
-  - Set Comparison
-  - Sets Initialization
-  - Sets Operations
-  - Sorted Set
-  - Sorting of Elements
+
+- Adding and Removing Elements
+- Converting a Set
+- Filtering Elements
+- Iterating Over a Set
+- Search for an Element
+- Set Comparison
+- Sets Initialization
+- Sets Operations
+- Sorted Set
+- Sorting of Elements
 
 ### Stacks (LIFO)
 
