@@ -72,6 +72,52 @@
   - Sorting of Elements
 - **Stacks (LIFO)**
 
+### Classes
+- Check for reference equality
+- Constants
+- Constructors
+  - Call of the own constructor
+  - Call of the parent constructor
+  - Default constructor
+  - Optional parameter values
+  - Replacement of the parent constructor
+  - With parameters
+  - Without any parameters
+- Create a copy of the object
+- Definition and initialization
+- Events
+- Fields
+- Inhiritance
+ - Abstract classes
+ - Base class
+ - Compability check (is)
+ - Members hiding
+ - Method override
+ - Private class members
+ - Property override
+ - Sealed class members
+- Methods
+ - Array of parameters
+ - Class methods
+ - In/Out parameters
+ - Multiple return values
+ - Optional parameter values
+ - Variable parameters
+ - With return value
+ - Without return value
+ - Without any parameters
+ - Without any return value
+- Nested class
+- Properties
+ - Computed properties
+ - Lazy properties
+ - Ready-Only properties
+  - Computed properties
+  - Stored properties
+ - Stored properties
+ - Type properties
+- Type members
+
 ### Control Flow
 
 - **Conditional Statements**
@@ -1143,6 +1189,7 @@ const poppedItem = stack.pop(); // Pops item2 from the stack
 ## Control Flow
 
 ### Conditional Statements
+
 If/Else Statements
 Complex Conditions
 Ternary Operator
@@ -1150,22 +1197,29 @@ Switch/Case Statements
 Different Types of Values
 Simple Conditions
 Without the `break` Operator
+
 ### Interruption of Control Flow:
+
 Break Statement
 Continue Statement
 Return Statement
 Labeled Statement
+
 ### Loops:
+
 Do-While Loop
-  - For Loop
-  - For-In Loop
-  - For-Of Loop
-  - ForEach Loop
-  - While Loop
-  - Endless Loop
+
+- For Loop
+- For-In Loop
+- For-Of Loop
+- ForEach Loop
+- While Loop
+- Endless Loop
+
 ### Other Operations:
-  - Debugger Statement
-  - With Statement
+
+- Debugger Statement
+- With Statement
 
 ### Enumerations
 
