@@ -112,8 +112,6 @@
  - Computed properties
  - Lazy properties
  - Ready-Only properties
-  - Computed properties
-  - Stored properties
  - Stored properties
  - Type properties
 - Type members
@@ -201,15 +199,13 @@
   - Arrays
   - Dictionaries
   - Set
-
-### Differences Between `var` and `let`
-
-### Enumerations
-
+- Differences between `var` and `let`
+- Enumerations
 - Simple Types
-- Structures
+ - Structures
   - Without Any Constructor
-- Interfaces
+
+# Interfaces
   - Conformance Checking (is, as)
   - Constructor Requirements
   - Declaration and Initialization
@@ -228,6 +224,7 @@
 - Memoization (Recursive)
 - Modify Captured Variable
 - Recursion
+- Void function as a parameter
 - With Multiple Operators
 - With Multiple Parameters
 - With One Parameter
@@ -241,7 +238,6 @@
 - Keywords `async` and `await`
 - Start of a New Thread
 - Start of a New Thread and Waiting
-- Operators Overloading
 
 ### Design Patterns
 
